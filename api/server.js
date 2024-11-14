@@ -5,9 +5,9 @@ const qrcode = require('qrcode');
 const path = require('path'); // Módulo para manipular caminhos
 
 const app = express();
-const PORT = process.env.PORT || 3001; // Configuração da porta para o Heroku
+const PORT = process.env.PORT; // Configuração da porta para o Heroku
 
-app.use(cors());
+app.use(cors({ origin: '*' })); // Permite acesso de qualquer origem
 app.use(express.json());
 
 // Rota raiz para garantir que o servidor esteja funcionando
