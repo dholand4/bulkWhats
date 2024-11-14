@@ -2,9 +2,10 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const express = require('express');
 const cors = require('cors');
 const qrcode = require('qrcode');
+const path = require('path'); // Módulo para manipular caminhos
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001; // Configuração da porta para o Heroku
 
 app.use(cors());
 app.use(express.json());
@@ -15,10 +16,11 @@ let isAuthenticated = false; // Variável para indicar se o cliente está autent
 // Substitua 'userId' pelo identificador exclusivo de cada usuário
 const userId = 'unique_user_id'; // Exemplo: isso poderia ser dinâmico para cada usuário
 
+// Configuração do cliente WhatsApp com autenticação local
 const client = new Client({
     authStrategy: new LocalAuth({
         clientId: userId, // Define uma pasta única para cada usuário
-        dataPath: `./whatsapp_auth_data/${userId}` // Define um caminho exclusivo para cada usuário
+        dataPath: path.resolve(__dirname, `./whatsapp_auth_data/${userId}`), // Caminho absoluto para autenticação
     }),
 });
 
