@@ -4,7 +4,8 @@ async function generateQRCode() {
     const clearAuthButton = document.getElementById('clearAuthButton');
 
     try {
-        const response = await fetch('https://bulkwhats.onrender.com/get-qr');
+        // Alteração do URL para o IP local na rede corporativa
+        const response = await fetch('http://172.16.0.26:3000/get-qr');
         console.log("Resposta do servidor:", response);
 
         if (!response.ok) {
@@ -44,7 +45,8 @@ async function sendMessage() {
     statusElement.textContent = "Iniciando envio de mensagens...";
 
     try {
-        const response = await fetch('https://bulkwhats.onrender.com/send-message', {
+        // Alteração do URL para o IP local na rede corporativa
+        const response = await fetch('http://172.16.0.26:3000/send-message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ numbers, message }),
