@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 3001; // Configuração da porta para o Heroku
 app.use(cors());
 app.use(express.json());
 
+// Rota raiz para garantir que o servidor esteja funcionando
+app.get('/', (req, res) => {
+    res.send('API está funcionando!');
+});
+
 let qrCodeData = ''; // Variável para armazenar o QR code
 let isAuthenticated = false; // Variável para indicar se o cliente está autenticado
 
