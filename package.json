@@ -1,4 +1,7 @@
 {
+  "name": "bulk-whats",
+  "version": "1.0.0",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1",
@@ -10,6 +13,6 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "16.x"
+    "node": "22.x"
   }
 }
