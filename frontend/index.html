@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sendWhats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="qr-section">
+            <h2>Autenticação</h2>
+            <button onclick="generateQRCode()">Gerar QR Code</button>
+            <img id="qrCode" style="display: none; margin-top: 20px;" alt="QR Code para login">
+            <p id="qrStatus">Clique para autenticar.</p>
+            <button id="clearAuthButton" style="display: none;" onclick="clearAuth()">Limpar Autenticação</button>
+        </div>
+
+        <div class="message-section">
+            <h2>Envio de Mensagens</h2>
+            <textarea id="numbers" placeholder="Digite os números separados por vírgula"></textarea>
+            <textarea id="message" placeholder="Digite sua mensagem"></textarea>
+            <button onclick="sendMessage()">Enviar Mensagem</button>
+            <p id="status"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
