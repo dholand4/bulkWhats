@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Whatsapp</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Link para o ícone do favicon -->
+    <link rel="icon" href="icone.png" type="image/png">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Seção de Autenticação -->
+        <div class="qr-section">
+            <h2>Autenticação</h2>
+
+            <!-- Campo para inserir a matrícula -->
+            <input type="text" id="matricula" placeholder="Digite sua matrícula" required
+                aria-describedby="matriculaStatus">
+
+            <button onclick="authenticateWithMatricula()"
+                aria-label="Clique para autenticar com a matrícula!">Autenticar</button>
+
+            <!-- Imagem do QR Code -->
+            <img id="qrCode" style="display: none; margin-top: 20px;" alt="QR Code para login">
+
+            <!-- Mensagem de status -->
+            <p id="qrStatus" class="status-message">Clique para autenticar</p>
+
+            <!-- Botão de limpar autenticação -->
+            <button id="clearAuthButton" style="display: none;" onclick="clearAuthentication()"
+                aria-label="Limpar autenticação">Limpar Autenticação</button>
+        </div>
+
+        <!-- Seção de Envio de Mensagens -->
+        <div class="message-section">
+            <h2>Envio de Mensagens</h2>
+
+            <textarea id="numbers"
+                placeholder="Por favor, separe os números por vírgula e, ao incluir um nome, utilize o formato: Nome: número (exemplo: Daniel: 8897000530)."
+                aria-describedby="status" required></textarea>
+
+
+            <!-- Campo para inserir mensagem -->
+            <textarea id="message" placeholder="Digite sua mensagem e, para inserir o nome, utilize o marcador {nome}."
+                maxlength="500" aria-describedby="status" required></textarea>
+
+            <!-- Botão de envio -->
+            <button onclick="sendMessage()" aria-label="Clique para enviar a mensagem">Enviar Mensagem</button>
+
+            <!-- Mensagem de status -->
+            <p id="status" class="status-message"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Daniel Holanda &copy; 2024
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# Ignore wwebjs cache and WhatsApp auth data
+.wwebjs_cache/
+whatsapp_auth_data/
+
+http-server -p 8000
