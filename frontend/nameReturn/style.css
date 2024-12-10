@@ -30,6 +30,7 @@ footer {
     box-shadow: 0 4px 10px black;
     border-radius: 15px;
     overflow: hidden;
+    height: 1200px;
 }
 
 .qr-section,
@@ -57,13 +58,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-a {
-    margin-top: 103px;
-    font-size: 15px;
-    color: #144d27;
-}
-
-#matricula,
 textarea {
     width: 100%;
     max-width: 380px;
@@ -75,19 +69,14 @@ textarea {
     color: #144d27;
     font-size: 16px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
+    height: 220px;
 }
 
-textarea {
-    height: 80px;
-}
-
-#matricula:focus,
 textarea:focus {
     border-color: #227f4b;
     outline: none;
 }
 
-#matricula::placeholder,
 textarea::placeholder {
     font-size: 14px;
     color: #227f4b;
@@ -112,35 +101,44 @@ button:hover {
     background: #144d27;
 }
 
-#qrCode {
-    max-width: 200px;
-    margin-top: 20px;
-    border: 1px solid #66bb6a;
+.output-container {
+    width: 100%;
+    max-width: 380px;
+    height: 220px;
+    /* Limita a altura */
+    border: 2px solid #2f6b32;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(34, 127, 75, 0.2);
-    transition: transform 0.3s ease;
-}
-
-#qrCode:hover {
-    transform: scale(1.1);
-}
-
-#status,
-#qrStatus {
-    margin-top: 20px;
-    font-size: 14px;
+    background: #ffffff;
+    /* Fundo branco */
     color: #144d27;
-    text-align: center;
+    font-size: 16px;
+    overflow-y: auto;
+    /* Scroll vertical */
+    padding: 12px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    /* Quebra de linha */
+    text-align: justify;
 }
 
-#status.success {
-    color: #2e7d32;
+.qr-section button {
+    background: linear-gradient(to bottom right, #4caf50, #2e7d32);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    margin-top: 20px;
+    min-width: 200px;
 }
 
-#status.error,
-#qrStatus.error {
-    color: #c62828;
+.qr-section button:hover {
+    transform: scale(1.05);
+    background: #144d27;
 }
+
 
 @media (max-width: 768px) {
     .main-container {
@@ -168,7 +166,7 @@ button:hover {
         height: 60px;
     }
 
-    #matricula {
+    .output-container {
         width: 90%;
     }
 }
